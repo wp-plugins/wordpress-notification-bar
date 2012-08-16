@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Notification Bar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-20 20:16-0500\n"
-"PO-Revision-Date: 2012-05-20 20:16-0500\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2012-08-16 10:06-0500\n"
+"PO-Revision-Date: 2012-08-16 10:06-0500\n"
+"Last-Translator: John Turner <john@seedprod.com>\n"
 "Language-Team: SeedProd <support@seedprod.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,9 @@ msgstr ""
 
 #: wordpress-notification-bar.php:42
 #, php-format
-msgid "WordPress %s and higher required. The plugin has now disabled itself. On a side note why are you running an old version :( Upgrade!"
+msgid ""
+"WordPress %s and higher required. The plugin has now disabled itself. On a "
+"side note why are you running an old version :( Upgrade!"
 msgstr ""
 
 #: framework/framework.php:116
@@ -62,8 +64,7 @@ msgstr ""
 msgid "Notification Bar"
 msgstr ""
 
-#: inc/config.php:50
-#: inc/config.php:76
+#: inc/config.php:50 inc/config.php:76
 msgid "Message"
 msgstr ""
 
@@ -75,7 +76,7 @@ msgstr ""
 msgid "Check if you want to enable the notification bar on your site."
 msgstr ""
 
-#: inc/config.php:68
+#: inc/config.php:68 inc/config.php:101
 msgid "Yes"
 msgstr ""
 
@@ -88,7 +89,9 @@ msgid "Button Label"
 msgstr ""
 
 #: inc/config.php:84
-msgid "Enter a title for your call to action button. If not entered the button will not appear."
+msgid ""
+"Enter a title for your call to action button. If not entered the button will "
+"not appear."
 msgstr ""
 
 #: inc/config.php:90
@@ -99,23 +102,34 @@ msgstr ""
 msgid "Enter a link for the button."
 msgstr ""
 
-#: inc/config.php:101
+#: inc/config.php:98
+msgid "Button Target"
+msgstr ""
+
+#: inc/config.php:99
+msgid ""
+"Open link in new window. If this is not checked the link will open in the "
+"same window."
+msgstr ""
+
+#: inc/config.php:110
 msgid "Style"
 msgstr ""
 
-#: inc/config.php:107
+#: inc/config.php:116
 msgid "Position"
 msgstr ""
 
-#: inc/config.php:109
+#: inc/config.php:118
 msgid "Sticky, stays at the top of the page even when you scroll down."
 msgstr ""
 
-#: inc/config.php:116
+#: inc/config.php:125
 msgid "Background Color"
 msgstr ""
 
-#: inc/config.php:125
-msgid "<p>Enter your information then click \"Save Changes\" to see a preview above. Check \"Enabled\" when you are ready to go live.</p>"
+#: inc/config.php:134
+msgid ""
+"<p>Enter your information then click \"Save Changes\" to see a preview "
+"above. Check \"Enabled\" when you are ready to go live.</p>"
 msgstr ""
-

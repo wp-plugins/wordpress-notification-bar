@@ -92,6 +92,15 @@ $seed_wnb->options[ ] = array(
     "validate" => 'sanitize_url',
 );
 
+$seed_wnb->options[ ] = array(
+    "type" => "checkbox",
+    "id" => "button_target",
+    "label" => __( "Button Target", 'seed_wnb' ),
+    "desc" => __( "Open link in new window. If this is not checked the link will open in the same window.", 'seed_wnb' ),
+    "option_values" => array(
+        '1' => __( 'Yes', 'seed_wnb' )
+    ) 
+);
 
 
 // Section 2

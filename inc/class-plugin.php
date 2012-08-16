@@ -33,12 +33,17 @@ class SeedProd_WordPress_Notification_Bar{
         $options = $seed_wnb->get_options();
 
         if($hook == 'settings_page_seed_wnb' || ! is_admin() && isset($options['enabled'])){
+        	$button_target = '_self';
+        	if(!empty($options['button_target'])){
+        		$button_target = '_blank';
+        	}
 
             wp_enqueue_script( 'seed-wnb-js', plugins_url('inc/js/seed_wnb.js',dirname(__FILE__)), array('jquery') );
             $data = array( 
                     'msg' => strip_tags($options['msg']),
                     'button_link' => $options['button_link'],
                     'button_label' => $options['button_label'],
+                    'button_target' => $button_target,
                 );
     		wp_localize_script( 'seed-wnb-js', 'seed_wnb_js_localize', $data );
             wp_enqueue_style( 'seed-wnb-css', plugins_url('inc/css/seed_wnb.css',dirname(__FILE__)), false );

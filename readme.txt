@@ -2,9 +2,9 @@
 Contributors: johnnytee, seedprod
 Donate link: http://seedprod.com/
 Tags: message, floating bar, notice, notification, sticky header, special offer, discount offer, offer, important, notification bar, attention bar, highlight bar
-Requires at least: 3
-Tested up to: 3.3
-Stable tag: 1.0.0
+Requires at least: 3.0.0
+Tested up to: 3.4.1
+Stable tag: 1.1.0
 
 A quick and easy notification bar and call to action for your site.
 
@@ -22,6 +22,7 @@ A quick and easy **notification bar** and **call to action** for your site.
 *   i18n Support
 *   Multisite Support
 
+This plugin is built and maintained by [SeedProd](http://www.seedprod.com "SeedProd")
 
 == Screenshots ==
 
@@ -30,10 +31,18 @@ A quick and easy **notification bar** and **call to action** for your site.
 
 
 == Changelog ==
+= 1.1.0 =
+* Added the ability open the link in a new window
+* Updated POT file
+
 = 1.0.0 =
-* FInitial Release
+* Initial Release
 
 
 == Upgrade Notice ==
+= 1.1.0 =
+* Added the ability open the link in a new window
+* Updated POT file
+
 = 1.0.0 =
 * Initial Release
