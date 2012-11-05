@@ -3,7 +3,7 @@
 Plugin Name: WordPress Notification Bar
 Plugin URI: http://seedprod.com/wordpress-notification-bar/
 Description: Global Notification Bar for WordPress
-Version:  1.1.0
+Version:  1.1.1
 Author: SeedProd
 Author URI: http://www.seedprod.com
 License: GPLv2
