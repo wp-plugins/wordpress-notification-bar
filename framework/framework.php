@@ -42,7 +42,7 @@ class SEED_WNB
      */
     function init( )
     {
-        load_plugin_textdomain( SEED_WNB_TEXTDOMAIN, SEED_WNB_PLUGIN_PATH . '/languages/' );
+        load_plugin_textdomain( SEED_WNB_TEXTDOMAIN, SEED_WNB_PLUGIN_PATH . 'languages/' );
     }
     
     /**

@@ -3,8 +3,8 @@ Contributors: johnnytee, seedprod
 Donate link: http://seedprod.com/
 Tags: message, floating bar, notice, notification, sticky header, special offer, discount offer, offer, important, notification bar, attention bar, highlight bar
 Requires at least: 3.0.0
-Tested up to: 3.4.1
-Stable tag: 1.1.1
+Tested up to: 3.4.2
+Stable tag: 1.1.2
 
 A quick and easy notification bar and call to action for your site.
 
@@ -22,7 +22,7 @@ A quick and easy **notification bar** and **call to action** for your site.
 *   i18n Support
 *   Multisite Support
 
-This plugin is built and maintained by [SeedProd](http://www.seedprod.com "SeedProd") Check out SeedProd's other plugins.
+This plugin is built and maintained by [SeedProd](http://www.seedprod.com/?utm_source=wordpress.org&utm_medium=link&utm_campaign=wordpress-notification-bar-from-wordpress.org "SeedProd") Check out SeedProd's other plugins.
 
 == Screenshots ==
 
@@ -31,6 +31,9 @@ This plugin is built and maintained by [SeedProd](http://www.seedprod.com "SeedP
 
 
 == Changelog ==
+= 1.1.2 =
+* Fized languages file path error
+
 = 1.1.1 =
 * Fized a bug in IE8 causing display issues
 
@@ -43,6 +46,9 @@ This plugin is built and maintained by [SeedProd](http://www.seedprod.com "SeedP
 
 
 == Upgrade Notice ==
+= 1.1.2 =
+* Fized languages file path error
+
 = 1.1.1 =
 * Fized a bug in IE8 causing display issues
 
