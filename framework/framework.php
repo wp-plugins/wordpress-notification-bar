@@ -350,9 +350,11 @@ class SEED_WNB
                             }
                         ?>
                     <p>
+
                     <input name="submit" type="submit" value="<?php _e( 'Save Changes', 'seed_wnb' ); ?>" class="button-primary"/>
                     <!-- <input id="reset" name="reset" type="submit" value="<?php _e( 'Reset', 'seed_wnb' ); ?>" class="button-secondary"/>   -->  
                     </p>
+                    <p><a href="http://eepurl.com/t6S8X" target="_blank">Get notified</a> when the Pro Version becomes available!</p>
                     </form> 
                     <?php if ( $layout == '2-col' ): ?> 
                     </div> <!-- #post-body-content -->
