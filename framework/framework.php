@@ -27,7 +27,6 @@ class SEED_WNB
      */
     function __construct( )
     {
-        add_action( 'init', array( &$this, 'init' ) );
         add_action( 'init', array( &$this, 'get_options' ) );
         add_action( 'admin_init', array( &$this, 'upgrade' ), 0 );
         add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts'  ) );
@@ -37,13 +36,6 @@ class SEED_WNB
         add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
     }
     
-    /**
-     * Load Text Domain
-     */
-    function init( )
-    {
-        load_plugin_textdomain( SEED_WNB_TEXTDOMAIN, SEED_WNB_PLUGIN_PATH . 'languages/' );
-    }
     
     /**
      * Upgrade setting pages. This allows you to run an upgrade script when the version changes.

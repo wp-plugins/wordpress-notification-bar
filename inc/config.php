@@ -10,7 +10,9 @@
 /**
  * Config
  */
-
+add_action('init', 'seed_wnb_init');
+function seed_wnb_init(){
+    global $seed_wnb;
 /**
  * Create new menus
  * Required: type => "add_options_page|"
@@ -126,6 +128,7 @@ $seed_wnb->options[ ] = array(
     "default_value" => "#fae985",
     "validate" => 'color',
 );
+}
 
 
 
