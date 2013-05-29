@@ -14,7 +14,8 @@ class SeedProd_WordPress_Notification_Bar{
     function __construct(){
     	global $seed_wnb;
     	if($seed_wnb)
-    		$options = $seed_wnb->get_options();
+    		$options = get_option('seed_wnb_settings_1');
+
 
     	if(!empty($options)){
 	        
