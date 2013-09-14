@@ -1,18 +1,20 @@
-﻿msgid ""
+msgid ""
 msgstr ""
 "Project-Id-Version: wnb-fa_IR\n"
 "POT-Creation-Date: 2013-07-28 00:45-0800\n"
-"PO-Revision-Date: 2013-07-28 01:22-0800\n"
+"PO-Revision-Date: 2013-09-13 10:31+0330\n"
 "Last-Translator: \n"
-"Language-Team: rushearn.com <support@rushearn.com>\n"
+"Language-Team: GraphicBaz Design Team <Delhamid.Alex@Gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: C:\\Documents and Settings\\mahdi\\Desktop\\wordpress-"
-"notification-bar\n"
-"X-Poedit-SearchPath-0:  wordpress-notification-bar.php:27
+"X-Poedit-Basepath: http://www.graphicbaz.ir/wordpress/wordpress-notification-"
+"bar/\n"
+"Language: Persian\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
 msgid "WordPress Notification Bar"
 msgstr "نوار اطلاع رسانی وردپرس"
 
@@ -63,7 +65,7 @@ msgstr "لازم است."
 
 #: inc/config.php:23
 msgid "Notification Bar"
-msgstr "نوار اطلاع رسانی"
+msgstr "نوار اطلاع رسانی گرافیکباز"
 
 #: inc/config.php:52
 #: Settings\mahdi\Desktop\wordpress-notification-bar/inc/config.php:78
@@ -136,6 +138,7 @@ msgid ""
 "<p>Enter your information then click \"Save Changes\" to see a preview "
 "above. Check \"Enabled\" when you are ready to go live.</p>"
 msgstr ""
-"<p>اطلاعات لازم را وارد کنید و سپس برای مشاهده پیش نمایش روی \"ذخیره تغییرات"
-"\" کلیک کنید. برای فعال کردن پلاگین, در بخش \"وضعیت\" تیک \"فعال\" را بزنید</"
-"p>"
+"<p>فارسي سازي و بهينه شده توسط : <a href=\"http://www.GraphicBaz.ir\" title="
+"\"تيم طراحي گرافيکباز\" target=\"_blank\">تيم طراحي گرافيکباز</a><br /"
+">اطلاعات لازم را وارد کنيد و سپس براي مشاهده پيش نمايش روي \"ذخيره تغييرات\" "
+"کليک کنيد. براي فعال کردن پلاگين, در بخش \"وضعيت\" تيک \"فعال\" را بزنيد</p>"
