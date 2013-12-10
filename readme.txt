@@ -3,7 +3,7 @@ Contributors: johnnytee, seedprod
 Donate link: http://seedprod.com/
 Tags: message, floating bar, notice, notification, sticky header, special offer, discount offer, offer, important, notification bar, attention bar, highlight bar
 Requires at least: 3.0.0
-Tested up to: 3.5.1
+Tested up to: 3.7.1
 Stable tag: 1.2.3
 
 A quick and easy notification bar and call to action for your site.
