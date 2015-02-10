@@ -22,7 +22,7 @@ $seed_wnb->options[ ] = array(
     "menu_type" => "add_options_page",
     "page_name" => __( "Notification Bar", 'seed_wnb' ),
     "menu_slug" => "seed_wnb",
-    //"layout" => "2-col" 
+    "layout" => "2-col" 
 );
 
 /**
@@ -31,7 +31,7 @@ $seed_wnb->options[ ] = array(
 // $seed_wnb->options[ ] = array(
 //     "type" => "tab",
 //     "id" => "seed_wnb_tab_1",
-//     "label" => __( "Settings", 'seed_wnb' ) 
+//     "label" => __( "Settings", 'seed_wnb' )
 // );
 
 /**
@@ -40,7 +40,7 @@ $seed_wnb->options[ ] = array(
  */
 $seed_wnb->options[ ] = array(
     "type" => "setting",
-    "id" => "seed_wnb_settings_1" 
+    "id" => "seed_wnb_settings_1"
 );
 
 /**
@@ -68,7 +68,7 @@ $seed_wnb->options[ ] = array(
     "desc" => __( "Check if you want to enable the notification bar on your site.", "seed_wnb" ),
     "option_values" => array(
         '1' => __( 'Yes', 'seed_wnb' )
-    ) 
+    )
 );
 
 
@@ -101,7 +101,7 @@ $seed_wnb->options[ ] = array(
     "desc" => __( "Open link in new window. If this is not checked the link will open in the same window.", 'seed_wnb' ),
     "option_values" => array(
         '1' => __( 'Yes', 'seed_wnb' )
-    ) 
+    )
 );
 
 
@@ -109,7 +109,7 @@ $seed_wnb->options[ ] = array(
 $seed_wnb->options[ ] = array(
     "type" => "section",
     "id" => "seed_wnb_section_2",
-    "label" => __( "Style", 'seed_wnb' ) 
+    "label" => __( "Style", 'seed_wnb' )
 );
 
 $seed_wnb->options[ ] = array(
@@ -118,7 +118,7 @@ $seed_wnb->options[ ] = array(
     "label" => __( "Position", 'seed_wnb' ),
     "option_values" => array(
         '1' => __( 'Sticky, stays at the top of the page even when you scroll down.', 'seed_wnb' ),
-    ) 
+    )
 );
 
 $seed_wnb->options[ ] = array(

@@ -11,17 +11,17 @@ class SEED_WNB
 {
     public $plugin_version = SEED_WNB_VERSION;
     public $plugin_name = SEED_WNB_PLUGIN_NAME;
-    
+
     /**
      * Holds defined menus
      */
     public $pages = array( );
-    
+
     /**
      *  Holds defined tabs, sections and fields
      */
     public $options = array( );
-    
+
     /**
      * Load Hooks
      */
@@ -35,8 +35,8 @@ class SEED_WNB
         add_action( 'admin_init', array( &$this, 'create_settings' ) );
         add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
     }
-    
-    
+
+
     /**
      * Upgrade setting pages. This allows you to run an upgrade script when the version changes.
      *
@@ -49,13 +49,13 @@ class SEED_WNB
             update_option( 'seed_wnb_version', SEED_WNB_VERSION );
             $seed_wnb_current_version = SEED_WNB_VERSION;
         }
-        
+
         // Sample script to update field if it's changed to a different tab.
         // if ( version_compare( SEED_WNB_VERSION,$seed_wnb_current_version ) === 1) {
         //     $old_fields = array();
         //     $old_fields = get_option('seed_wnb_options_1');
         //     $old_fields = $old_fields + get_option('seed_wnb_options_1');
-        
+
         //     $new_fields = array();
         //     foreach ($this->options as $k) {
         //         switch ($k['type']) {
@@ -67,16 +67,16 @@ class SEED_WNB
         //                 if(isset($old_fields[$k['id']])){
         //                     $new_fields[$k['setting_id']][$k['id']] = $old_fields[$k['id']];
         //                 }
-        
-        
+
+
         //         }
         //     }
         //     var_dump($old_fields);
         //     var_dump($new_fields);
-        
+
         // }
     }
-    
+
     /**
      * Reset the settings page. Reset works per settings id.
      *
@@ -102,14 +102,14 @@ class SEED_WNB
                         }
                 }
             }
-            
+
             $_POST[ $_POST[ 'option_page' ] ] = $defaults;
 
             add_settings_error( 'general', 'seed_wnb-settings-reset', __( "Settings reset." ), 'updated' );
         }
-        
+
     }
-    
+
     /**
      * Properly enqueue styles and scripts for our theme options page.
      *
@@ -122,7 +122,7 @@ class SEED_WNB
     {
         if ( !in_array( $hook_suffix, $this->pages ) )
             return;
-        
+
         wp_enqueue_script( 'dashboard' );
         wp_enqueue_script( 'seed_wnb-framework-js', SEED_WNB_PLUGIN_URL . 'framework/settings-scripts.js', array( 'jquery' ), $this->plugin_version );
         wp_enqueue_style( 'thickbox' );
@@ -144,7 +144,7 @@ class SEED_WNB
                 case 'setting':
                     $s = get_option( $k[ 'id' ]);
                     if(is_array($s)){
-                        $settings = $settings + $s; 
+                        $settings = $settings + $s;
                     }
                     break;
             }
@@ -153,7 +153,7 @@ class SEED_WNB
         return $settings;
     }
 
-    
+
     /**
      * Creates WordPress Menu pages from an array in the config file.
      *
@@ -174,7 +174,7 @@ class SEED_WNB
                 if ( empty( $v[ 'callback' ] ) ) {
                     $v[ 'callback' ] = array(
                         &$this,
-                        'option_page' 
+                        'option_page'
                     );
                 }
                 if ( empty( $v[ 'icon_url' ] ) ) {
@@ -191,7 +191,7 @@ class SEED_WNB
                         $v[ 'menu_name' ],
                         $v[ 'capability' ],
                         $v[ 'menu_slug' ],
-                        $v[ 'callback' ] 
+                        $v[ 'callback' ]
                     ) );
                 } else {
                     $this->pages[ ] = call_user_func_array( $v[ 'menu_type' ], array(
@@ -200,13 +200,13 @@ class SEED_WNB
                         $v[ 'capability' ],
                         $v[ 'menu_slug' ],
                         $v[ 'callback' ],
-                        $v[ 'icon_url' ] 
+                        $v[ 'icon_url' ]
                     ) );
                 }
             }
         }
     }
-    
+
     /**
      * Display settings link on plugin page
      */
@@ -220,8 +220,8 @@ class SEED_WNB
         }
         return $links;
     }
-    
-    
+
+
     /**
      * Allow Tabs on the Settings Page
      *
@@ -231,14 +231,14 @@ class SEED_WNB
         $page        = $_REQUEST[ 'page' ];
         $uses_tabs   = false;
         $current_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : false;
-        
+
         //Check if this config uses tabs
         foreach ( $this->options as $v ) {
             if ( $v[ 'type' ] == 'tab' ) {
                 $uses_tabs = true;
             }
         }
-        
+
         // If uses tabs then generate the tabs
         if ( $uses_tabs ) {
             echo '<h2 class="nav-tab-wrapper" style="padding-left:20px">';
@@ -260,7 +260,7 @@ class SEED_WNB
             echo '</h2>';
         }
     }
-    
+
     /**
      * Get the layout for the page. classic|2-col
      *
@@ -282,7 +282,7 @@ class SEED_WNB
         }
         return $layout;
     }
-    
+
     /**
      * Render the option pages.
      *
@@ -317,7 +317,7 @@ class SEED_WNB
                                                     $default_tab = $v[ 'id' ];
                                                 break;
                                             case 'setting':
-                                                
+
                                                 $current_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : $default_tab;
                                                 if ( $current_tab == $tab[ 'id' ] ) {
                                                     settings_fields( $v[ 'id' ] );
@@ -335,7 +335,7 @@ class SEED_WNB
                                                     }
                                                 }
                                                 break;
-                                                
+
                                         }
                                     }
                                 }
@@ -344,34 +344,94 @@ class SEED_WNB
                     <p>
 
                     <input name="submit" type="submit" value="<?php _e( 'Save Changes', 'seed_wnb' ); ?>" class="button-primary"/>
-                    <!-- <input id="reset" name="reset" type="submit" value="<?php _e( 'Reset', 'seed_wnb' ); ?>" class="button-secondary"/>   -->  
+                    <!-- <input id="reset" name="reset" type="submit" value="<?php _e( 'Reset', 'seed_wnb' ); ?>" class="button-secondary"/>   -->
                     </p>
                     <p><a href="http://eepurl.com/t6S8X" target="_blank">Get notified</a> when the Pro Version becomes available!</p>
-                    </form> 
-                    <?php if ( $layout == '2-col' ): ?> 
+                    </form>
+                    <?php if ( $layout == '2-col' ): ?>
                     </div> <!-- #post-body-content -->
 
                     <div id="postbox-container-1" class="postbox-container">
-                            <!-- This is a sample postbox. Can be customized. -->
-                            <div class="postbox support-postbox">
+                        <div id="side-sortables" class="meta-box-sortables ui-sortable">
+                            <!-- <a href="http://www.seedprod.com/plugins/wordpress-coming-soon-pro-plugin/?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner" target="_blank"><img src="http://static.seedprod.com/ads/coming-soon-pro-sidebar.png" /></a>
+                            <br><br> -->
+                            <div class="postbox support-postbox" style="background-color: #fcf8e3">
                                 <div class="handlediv" title="Click to toggle"><br /></div>
-                                <h3><span><?php echo $this->plugin_name; ?></span> 
-                                    <span class="seed_wnb-version"><?php echo SEED_WNB_VERSION; ?></span></h3>
+                                <h3 class="hndle"><span><?php _e('Plugin Support', 'seed_wnb') ?></span></h3>
                                 <div class="inside">
-                                    <div class="seed_wnb-widget">
-                                        Sample Postbox
+                                    <div class="support-widget">
+                                        <p>
+                                            <?php _e('Got a Question, Idea, Problem or Praise?') ?>
+                                        </p>
+                                        <ul>
+                                            <li>&raquo; <a href="https://wordpress.org/support/plugin/wordpress-notification-bar" target="_blank"><?php _e('Support Request', 'seed_wnb') ?></a></li>
+                                        </ul>
+
                                     </div>
                                 </div>
-                            </div><!-- end .postbox -->
+                            </div>
+                            <?php if(1 == 0){ ?>
+                                <div class="postbox like-postbox" style="background-color:#dff0d8">
+                                    <div class="handlediv" title="Click to toggle"><br /></div>
+                                    <h3 class="hndle"><span><?php _e('Show Some Love', 'seed_wnb') ?></span></h3>
+                                    <div class="inside">
+                                        <div class="like-widget">
+                                            <p><?php _e('Like this plugin? Show your support by:', 'seed_wnb')?></p>
+                                            <ul>
+                                                <li>&raquo; <a target="_blank" href="https://www.seedprod.com?utm_source=plugin&utm_medium=banner&utm_campaign=coming-soon-pro-in-plugin-banner"><?php _e('Buy It', 'seed_wnb') ?></a></li>
 
-              
-                    </div> <!-- #postbox-container-1 -->
-                </div> <!-- #post-body --> 
-            </div> <!-- #poststuff --> 
+                                                <li>&raquo; <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/seed_wnb?rate=5#postform"><?php _e('Rate It', 'seed_wnb') ?></a></li>
+                                                <li>&raquo; <a target="_blank" href="<?php echo "http://twitter.com/share?url=https%3A%2F%2Fwordpress.org%2Fplugins%2Fseed_wnb%2F&text=Check out this awesome %23WordPress Plugin I'm using, 'Ultimate Coming Soon Page' by SeedProd"; ?>"><?php _e('Tweet It', 'seed_wnb') ?></a></li>
+
+                                                <li>&raquo; <a href="https://www.seedprod.com/submit-site/"><?php _e('Submit your site to the Showcase', 'seed_wnb') ?></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                <div class="postbox rss-postbox" style="background-color:#d9edf7; background-color:#dff0d8">
+                                    <div class="handlediv" title="Click to toggle"><br /></div>
+                                    <h3 class="hndle" style="text-align:center;"><span><?php _e("Get SeedProd<br>Use Coupon Code <strong>WNB15<strong><br>to save 15% off!", 'seed_wnb') ?></span></h3>
+
+                                        <a href="https://www.seedprod.com?utm_source=plugin&utm_medium=banner&utm_campaign=wordpress-notification-bar-in-plugin-banner" target="_blank">
+                                        <img style="width100%;max-width:100%; padding:0px;" src="<?php echo plugin_dir_url( __FILE__ ); ?>/seedprod-300x250.png">
+                                        </a>
+
+                                    </div>
+
+                                    <div class="postbox rss-postbox" style="background-color:#d9edf7">
+                                        <div class="handlediv" title="Click to toggle"><br /></div>
+                                        <h3 class="hndle"><span><?php _e('SeedProd Blog', 'seed_wnb') ?></span></h3>
+                                        <div class="inside">
+
+                                            <div class="rss-widget">
+                                                <?php
+                                                wp_widget_rss_output(array(
+                                                'url' => 'http://seedprod.com/feed/',
+                                                'title' => 'SeedProd Blog',
+                                                'items' => 3,
+                                                'show_summary' => 0,
+                                                'show_author' => 0,
+                                                'show_date' => 1,
+                                            ));
+                                            ?>
+                                            <ul>
+                                                <br>
+                                            <li>&raquo; <a href="https://feedburner.google.com/fb/a/mailverify?uri=seedprod"><?php _e('Subscribe by Email', 'seed_wnb') ?></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                                </div>
+                            </div> <!-- #postbox-container-1 -->
+                </div> <!-- #post-body -->
+            </div> <!-- #poststuff -->
             <?php endif; ?>
         </div> <!-- .wrap -->
 
-        <!-- JS login to confirm setting resets. -->    
+        <!-- JS login to confirm setting resets. -->
         <script>
             jQuery(document).ready(function($) {
                 $('#reset').click(function(e){
@@ -383,7 +443,7 @@ class SEED_WNB
         </script>
         <?php
     }
-    
+
     /**
      * Create the settings options, sections and fields via the WordPress Settings API
      *
@@ -402,7 +462,7 @@ class SEED_WNB
                     if ( empty( $v[ 'validate_function' ] ) ) {
                         $v[ 'validate_function' ] = array(
                              &$this,
-                            'validate_machine' 
+                            'validate_machine'
                         );
                     }
                     register_setting( $v[ 'id' ], $v[ 'id' ], $v[ 'validate_function' ] );
@@ -413,7 +473,7 @@ class SEED_WNB
                     if ( empty( $v[ 'desc_callback' ] ) ) {
                         $v[ 'desc_callback' ] = array(
                              &$this,
-                            '__return_empty_string' 
+                            '__return_empty_string'
                         );
                     } else {
                         $v[ 'desc_callback' ] = $v[ 'desc_callback' ];
@@ -429,10 +489,10 @@ class SEED_WNB
                     if ( empty( $v[ 'callback' ] ) ) {
                         $v[ 'callback' ] = array(
                              &$this,
-                            'field_machine' 
+                            'field_machine'
                         );
                     }
-                    
+
                     add_settings_field( $v[ 'id' ], $v[ 'label' ], $v[ 'callback' ], $section_id, $section_id, array(
                          'id' => $v[ 'id' ],
                         'desc' => ( isset( $v[ 'desc' ] ) ? $v[ 'desc' ] : '' ),
@@ -440,13 +500,13 @@ class SEED_WNB
                         'class' => ( isset( $v[ 'class' ] ) ? $v[ 'class' ] : '' ),
                         'type' => $v[ 'type' ],
                         'default_value' => ( isset( $v[ 'default_value' ] ) ? $v[ 'default_value' ] : '' ),
-                        'option_values' => ( isset( $v[ 'option_values' ] ) ? $v[ 'option_values' ] : '' ) 
+                        'option_values' => ( isset( $v[ 'option_values' ] ) ? $v[ 'option_values' ] : '' )
                     ) );
-                    
+
             }
         }
     }
-    
+
     /**
      * Create a field based on the field type passed in.
      *
@@ -455,7 +515,7 @@ class SEED_WNB
     function field_machine( $args )
     {
         extract( $args ); //$id, $desc, $setting_id, $class, $type, $default_value, $option_values
-        
+
         $defaults = array( );
         foreach ( $this->options as $k ) {
             switch ( $k[ 'type' ] ) {
@@ -470,9 +530,9 @@ class SEED_WNB
             }
         }
         $options = get_option( $setting_id );
-        
+
         $options = wp_parse_args( $options, $defaults );
-        
+
         $path = SEED_WNB_PLUGIN_PATH . 'framework/field-types/' . $type . '.php';
         if ( file_exists( $path ) ) {
             // Show Field
@@ -482,9 +542,9 @@ class SEED_WNB
                 echo "<small class='description'>{$desc}</small>";
             }
         }
-        
+
     }
-    
+
     /**
      * Validates user input before we save it via the Options API. If error add_setting_error
      *
@@ -512,27 +572,27 @@ class SEED_WNB
                                 // Defaults Values
                                 $is_valid  = true;
                                 $error_msg = '';
-                                
+
                                 // Test Validation
                                 require_once( $path );
-                                
+
                                 // Is it valid?
                                 if ( $is_valid === false ) {
                                     add_settings_error( $k[ 'id' ], 'seedprod_error', $error_msg, 'error' );
                                     // Unset invalids
                                     $input[ $k[ 'id' ] ] = $options[$k[ 'id' ]];
                                 }
-                                
+
                             }
                         } //end foreach
-                        
+
                     }
             }
         }
-        
+
         return $input;
     }
-    
+
     /**
      * Dummy function to be called by all sections from the Settings API. Define a custom function in the config.
      *
@@ -543,8 +603,8 @@ class SEED_WNB
     {
         echo '';
     }
-    
-    
+
+
     /**
      * SeedProd version of WP's do_settings_sections
      *
@@ -553,10 +613,10 @@ class SEED_WNB
     function do_settings_sections( $page )
     {
         global $wp_settings_sections, $wp_settings_fields;
-        
+
         if ( !isset( $wp_settings_sections ) || !isset( $wp_settings_sections[ $page ] ) )
             return;
-        
+
         foreach ( (array) $wp_settings_sections[ $page ] as $section ) {
             echo "<h3>{$section['title']}</h3>\n";
             echo '<div class="inside">';
@@ -569,7 +629,7 @@ class SEED_WNB
             echo '</div>';
         }
     }
-    
+
 }
 
 // Instantiate class

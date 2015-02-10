@@ -6,7 +6,8 @@
 	background:#000;
 	text-align:center;
 	color:#fff;
-	height:33px;
+	height:auto;
+	min-height:33px;
 	top:0px;
 	left:0px;
 	border-bottom: 3px solid #fff;
@@ -36,5 +37,3 @@
 	vertical-align: baseline;
 	background-color: #999;
 }
-
- 
