@@ -3,8 +3,8 @@ Contributors: johnnytee, seedprod
 Donate link: http://seedprod.com/
 Tags: message, floating bar, notice, notification, sticky header, special offer, discount offer, offer, important, notification bar, attention bar, highlight bar
 Requires at least: 3.0.0
-Tested up to: 4.2.3
-Stable tag: 1.3.3
+Tested up to: 4.2.2
+Stable tag: 1.3.4
 
 A quick and easy notification bar and call to action for your site.
 
@@ -43,6 +43,9 @@ This plugin is built and maintained by [SeedProd](http://www.seedprod.com/?utm_s
 
 
 == Changelog ==
+= 1.3.4 =
+* Added: Danish Translations
+
 = 1.3.3 =
 * Added: Swedish Translations
 
