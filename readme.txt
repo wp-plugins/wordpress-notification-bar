@@ -27,6 +27,7 @@ This plugin is built and maintained by [SeedProd](http://www.seedprod.com/?utm_s
 **Included Translations:**
 
 * Czech(cz_CZ) by [Lukas Prelovsky](http://lukasprelovsky.sk)
+* Danish(da_DK) by [Alexander Leo-Hansen](http://alexanderleohansen.dk)
 * German(de_DE) by Daniel Hoffmann
 * Indonesia(id_ID) by [Ridha Harwan](https://tarjiem.com/)
 * Persian(fa_IR) by [rushearn](http://rushearn.com)
